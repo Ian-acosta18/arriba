@@ -3,90 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA BEAUTY & SPA - Luce radiante, siéntete tú</title>
+    <title>AURA BEAUTY & SPA - Servicios</title>
     
-    
-    <link rel="stylesheet" href="http://127.0.0.1:8000/css/style.css">
-    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&family=Dancing+Script&display=swap" rel="stylesheet">
-
-    
-    <style>
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--color-principal, #B98D7B);
-            padding-bottom: 1rem;
-        }
-
-        .tabla-admin {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 2rem;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .tabla-admin th {
-            background-color: var(--color-principal, #B98D7B);
-            color: white;
-            padding: 1rem;
-            font-family: 'Playfair Display', serif;
-            text-align: left;
-            font-weight: normal;
-        }
-
-        .tabla-admin td {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-            color: var(--color-texto, #5c4b45);
-        }
-
-        .tabla-admin tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Botones de Acción (Editar/Borrar) */
-        .btn-accion {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-right: 5px;
-            border: none;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .btn-accion:hover { opacity: 0.8; }
-        .btn-editar { background-color: #f0ad4e; color: white; }
-        .btn-borrar { background-color: #d9534f; color: white; }
-
-        /* Botón "Nuevo" */
-        .btn-nuevo {
-            background-color: var(--color-principal, #B98D7B);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: 'Playfair Display', serif;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-
-        .btn-nuevo:hover {
-            background-color: #a57c6b;
-            transform: translateY(-2px);
-        }
-    </style>
 </head>
 <body>
 
@@ -97,27 +21,21 @@
         </div>
         <nav>
             <ul>
-                
-                <li><a href="http://127.0.0.1:8000">Inicio</a></li>
-                <li><a href="http://127.0.0.1:8000/servicios">Servicios</a></li>
-                <li><a href="http://127.0.0.1:8000/instalaciones">Instalaciones</a></li>
-                <li><a href="http://127.0.0.1:8000/productos">Productos</a></li>
-                <li><a href="http://127.0.0.1:8000/nosotros">Nosotros</a></li>
-                <li><a href="http://127.0.0.1:8000/contacto">Contacto</a></li>
-                
-                
-                <li><a href="http://127.0.0.1:8000/reservaciones" class="btn-reserva">Reservar Cita</a></li>
-                
-                
-                <li><a href="http://127.0.0.1:8000/administrador" class="btn-reserva">Administrador</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="instalaciones.html">Instalaciones</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="reservar.html" class="btn-reserva">Reservar Cita</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         
-        
 <style>
+    /* Estilos específicos de servicios (mantenidos del original) */
     :root {
         --primario: #B98D7B;
         --secundario: #5c4b45;
@@ -165,29 +83,9 @@
         transition: transform 0.5s ease-out;
     }
 
-    .shape-1 {
-        width: 250px;
-        height: 250px;
-        background: radial-gradient(circle, var(--primario), transparent);
-        top: -80px;
-        right: 10%;
-    }
-
-    .shape-2 {
-        width: 200px;
-        height: 200px;
-        background: radial-gradient(circle, var(--acento), transparent);
-        bottom: -60px;
-        left: 15%;
-    }
-
-    .shape-3 {
-        width: 150px;
-        height: 150px;
-        background: radial-gradient(circle, var(--secundario), transparent);
-        top: 20%;
-        left: 40%;
-    }
+    .shape-1 { width: 250px; height: 250px; background: radial-gradient(circle, var(--primario), transparent); top: -80px; right: 10%; }
+    .shape-2 { width: 200px; height: 200px; background: radial-gradient(circle, var(--acento), transparent); bottom: -60px; left: 15%; }
+    .shape-3 { width: 150px; height: 150px; background: radial-gradient(circle, var(--secundario), transparent); top: 20%; left: 40%; }
 
     .hero-content-interactive {
         position: relative;
@@ -239,14 +137,8 @@
     }
 
     @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(-30px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .search-input {
@@ -314,15 +206,9 @@
         transition: left 0.5s ease;
     }
 
-    .filter-chip:hover::before {
-        left: 100%;
-    }
-
-    .filter-chip:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(185, 141, 123, 0.2);
-    }
-
+    .filter-chip:hover::before { left: 100%; }
+    .filter-chip:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(185, 141, 123, 0.2); }
+    
     .filter-chip.active {
         background: var(--primario);
         color: white;
@@ -349,11 +235,7 @@
         animation: fadeIn 0.5s ease;
     }
 
-    .results-counter strong {
-        color: var(--primario);
-        font-weight: 700;
-        font-size: 1.2rem;
-    }
+    .results-counter strong { color: var(--primario); font-weight: 700; font-size: 1.2rem; }
 
     /* GRID CON STAGGER ANIMATION */
     .servicios-grid-interactive {
@@ -373,16 +255,10 @@
         cursor: pointer;
     }
 
-    .card-interactive.flipped .card-front {
-        transform: rotateY(180deg);
-    }
+    .card-interactive.flipped .card-front { transform: rotateY(180deg); }
+    .card-interactive.flipped .card-back { transform: rotateY(0deg); }
 
-    .card-interactive.flipped .card-back {
-        transform: rotateY(0deg);
-    }
-
-    .card-front,
-    .card-back {
+    .card-front, .card-back {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -392,11 +268,7 @@
         box-shadow: 0 10px 30px rgba(185, 141, 123, 0.15);
     }
 
-    .card-front {
-        background: white;
-        transform: rotateY(0deg);
-    }
-
+    .card-front { background: white; transform: rotateY(0deg); }
     .card-back {
         background: linear-gradient(135deg, var(--primario), var(--acento));
         transform: rotateY(-180deg);
@@ -408,10 +280,7 @@
         color: white;
     }
 
-    .card-interactive:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 50px rgba(185, 141, 123, 0.25);
-    }
+    .card-interactive:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(185, 141, 123, 0.25); }
 
     /* IMAGEN CON ZOOM */
     .imagen-wrapper-interactive {
@@ -429,9 +298,7 @@
         transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .card-interactive:hover .imagen-servicio {
-        transform: scale(1.15) rotate(2deg);
-    }
+    .card-interactive:hover .imagen-servicio { transform: scale(1.15) rotate(2deg); }
 
     .imagen-overlay-interactive {
         position: absolute;
@@ -445,9 +312,7 @@
         padding: 20px;
     }
 
-    .card-interactive:hover .imagen-overlay-interactive {
-        opacity: 1;
-    }
+    .card-interactive:hover .imagen-overlay-interactive { opacity: 1; }
 
     .quick-view-btn {
         background: white;
@@ -463,17 +328,8 @@
         opacity: 0;
     }
 
-    .card-interactive:hover .quick-view-btn {
-        transform: translateY(0);
-        opacity: 1;
-        transition-delay: 0.2s;
-    }
-
-    .quick-view-btn:hover {
-        background: var(--primario);
-        color: white;
-        transform: translateY(-3px);
-    }
+    .card-interactive:hover .quick-view-btn { transform: translateY(0); opacity: 1; transition-delay: 0.2s; }
+    .quick-view-btn:hover { background: var(--primario); color: white; transform: translateY(-3px); }
 
     /* PRECIO FLOTANTE MEJORADO */
     .precio-floating {
@@ -501,9 +357,7 @@
     }
 
     /* CONTENIDO TARJETA */
-    .card-content-interactive {
-        padding: 25px;
-    }
+    .card-content-interactive { padding: 25px; }
 
     .categoria-tag {
         display: inline-block;
@@ -534,9 +388,7 @@
         transition: color 0.3s ease;
     }
 
-    .card-interactive:hover .servicio-nombre-interactive {
-        color: var(--primario);
-    }
+    .card-interactive:hover .servicio-nombre-interactive { color: var(--primario); }
 
     /* BOTÓN RESERVAR INTERACTIVO */
     .btn-reservar-interactive {
@@ -571,136 +423,38 @@
         transition: width 0.5s ease, height 0.5s ease;
     }
 
-    .btn-reservar-interactive span {
-        position: relative;
-        z-index: 1;
-        transition: color 0.3s ease;
-    }
-
-    .btn-reservar-interactive:hover::before {
-        width: 500px;
-        height: 500px;
-    }
-
-    .btn-reservar-interactive:hover span {
-        color: white;
-    }
-
-    .btn-reservar-interactive:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(185, 141, 123, 0.3);
-    }
+    .btn-reservar-interactive span { position: relative; z-index: 1; transition: color 0.3s ease; }
+    .btn-reservar-interactive:hover::before { width: 500px; height: 500px; }
+    .btn-reservar-interactive:hover span { color: white; }
+    .btn-reservar-interactive:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(185, 141, 123, 0.3); }
 
     /* INFO REVERSO */
-    .back-info {
-        text-align: center;
-    }
+    .back-info { text-align: center; }
+    .back-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .back-description { font-size: 1rem; line-height: 1.6; margin-bottom: 20px; opacity: 0.95; }
+    .flip-hint { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 0.85rem; opacity: 0.7; animation: pulse 2s infinite; }
 
-    .back-title {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-        font-weight: 700;
-    }
-
-    .back-description {
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
-        opacity: 0.95;
-    }
-
-    .flip-hint {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 0.85rem;
-        opacity: 0.7;
-        animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
-    }
+    @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
 
     /* NO RESULTS */
-    .no-results {
-        text-align: center;
-        padding: 100px 20px;
-        animation: fadeIn 0.5s ease;
-    }
-
-    .no-results-icon {
-        font-size: 4rem;
-        margin-bottom: 20px;
-        opacity: 0.3;
-    }
-
-    .no-results h3 {
-        font-family: 'Playfair Display', serif;
-        color: var(--primario);
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-
-    .no-results p {
-        color: var(--texto-suave);
-        font-size: 1.1rem;
-    }
-
-    /* LOADING ANIMATION */
-    .loading-skeleton {
-        animation: skeleton-loading 1.5s infinite;
-    }
-
-    @keyframes skeleton-loading {
-        0%, 100% { opacity: 0.4; }
-        50% { opacity: 1; }
-    }
+    .no-results { text-align: center; padding: 100px 20px; animation: fadeIn 0.5s ease; }
+    .no-results-icon { font-size: 4rem; margin-bottom: 20px; opacity: 0.3; }
+    .no-results h3 { font-family: 'Playfair Display', serif; color: var(--primario); font-size: 2rem; margin-bottom: 10px; }
+    .no-results p { color: var(--texto-suave); font-size: 1.1rem; }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-        .hero-interactive {
-            height: 25vh;
-            min-height: 200px;
-            border-radius: 0 0 30px 30px;
-        }
-
-        .servicios-grid-interactive {
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .filters-wrapper {
-            gap: 10px;
-        }
-
-        .filter-chip {
-            padding: 10px 20px;
-            font-size: 0.8rem;
-        }
-
-        .card-interactive {
-            height: 420px;
-        }
-        
-        .hero-title-interactive {
-            font-size: 1.8rem;
-        }
-        
-        .hero-subtitle-interactive {
-            font-size: 0.85rem;
-        }
+        .hero-interactive { height: 25vh; min-height: 200px; border-radius: 0 0 30px 30px; }
+        .servicios-grid-interactive { grid-template-columns: 1fr; gap: 20px; }
+        .filters-wrapper { gap: 10px; }
+        .filter-chip { padding: 10px 20px; font-size: 0.8rem; }
+        .card-interactive { height: 420px; }
+        .hero-title-interactive { font-size: 1.8rem; }
+        .hero-subtitle-interactive { font-size: 0.85rem; }
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
-
 
 <div class="hero-interactive" id="heroInteractive">
     <div class="parallax-layer" id="parallaxLayer">
@@ -715,288 +469,132 @@
     </div>
 </div>
 
-
 <div class="search-container">
     <div class="search-wrapper">
-        <input type="text" 
-               class="search-input" 
-               id="searchInput" 
-               placeholder="Buscar servicios..."
-               autocomplete="off">
+        <input type="text" class="search-input" id="searchInput" placeholder="Buscar servicios..." autocomplete="off">
         <span class="search-icon">🔍</span>
     </div>
 </div>
 
-
 <div class="filters-wrapper" id="filtersWrapper">
-    <button class="filter-chip active" data-categoria="todos">
-        Todos <span class="count" id="countTodos">4</span>
-    </button>
-                        <button class="filter-chip" data-categoria="1">
-                Cabello <span class="count">2</span>
-            </button>
-                                <button class="filter-chip" data-categoria="2">
-                Belleza <span class="count">1</span>
-            </button>
-                                <button class="filter-chip" data-categoria="3">
-                Spa y Masajes <span class="count">1</span>
-            </button>
-                        </div>
-
-
-<div class="results-counter" id="resultsCounter">
-    Mostrando <strong id="resultCount">4</strong> servicios
+    <button class="filter-chip active" data-categoria="todos">Todos <span class="count" id="countTodos">4</span></button>
+    <button class="filter-chip" data-categoria="1">Cabello <span class="count">2</span></button>
+    <button class="filter-chip" data-categoria="2">Belleza <span class="count">1</span></button>
+    <button class="filter-chip" data-categoria="3">Spa y Masajes <span class="count">1</span></button>
 </div>
 
+<div class="results-counter" id="resultsCounter">Mostrando <strong id="resultCount">4</strong> servicios</div>
 
 <div class="container pb-5">
-    
-            
-        <div class="servicios-grid-interactive" id="serviciosGrid">
-                                                <div class="card-interactive" 
-                         data-categoria="1"
-                         data-nombre="corte">
-                        
-                        
-                        <div class="card-front">
-                            <div class="imagen-wrapper-interactive">
-                                                                    <img src="http://127.0.0.1:8000/imagen/servicio_1764841355.jpg" 
-                                         alt="Corte"
-                                         class="imagen-servicio">
-                                                                
-                                <div class="imagen-overlay-interactive">
-                                    <button class="quick-view-btn" onclick="event.stopPropagation()">
-                                        👁 Vista rápida
-                                    </button>
-                                </div>
-                                
-                                <div class="precio-floating">
-                                    $149.99
-                                </div>
-                            </div>
-                            
-                            <div class="card-content-interactive">
-                                <div class="categoria-tag">
-                                    Cabello
-                                </div>
-                                
-                                <h3 class="servicio-nombre-interactive">
-                                    Corte
-                                </h3>
-                                
-                                <a href="http://127.0.0.1:8000/reservaciones" 
-                                   class="btn-reservar-interactive"
-                                   onclick="event.stopPropagation()">
-                                    <span>Reservar Ahora</span>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="card-back">
-                            <div class="back-info">
-                                <h3 class="back-title">Corte</h3>
-                                <p class="back-description">
-                                    Descubre una experiencia única diseñada especialmente para ti. 
-                                    Calidad premium y atención personalizada.
-                                </p>
-                                <a href="http://127.0.0.1:8000/reservaciones" 
-                                   class="btn-reservar-interactive"
-                                   style="max-width: 250px; margin: 0 auto;"
-                                   onclick="event.stopPropagation()">
-                                    <span>Reservar</span>
-                                </a>
-                            </div>
-                            <div class="flip-hint">Clic para voltear</div>
-                        </div>
-                        
-                    </div>
-                                    <div class="card-interactive" 
-                         data-categoria="1"
-                         data-nombre="tinte">
-                        
-                        
-                        <div class="card-front">
-                            <div class="imagen-wrapper-interactive">
-                                                                    <img src="http://127.0.0.1:8000/imagen/sinfoto.jpg" 
-                                         alt="Sin imagen" 
-                                         class="imagen-servicio"
-                                         style="filter: grayscale(100%) brightness(0.7);">
-                                                                
-                                <div class="imagen-overlay-interactive">
-                                    <button class="quick-view-btn" onclick="event.stopPropagation()">
-                                        👁 Vista rápida
-                                    </button>
-                                </div>
-                                
-                                <div class="precio-floating">
-                                    $280.00
-                                </div>
-                            </div>
-                            
-                            <div class="card-content-interactive">
-                                <div class="categoria-tag">
-                                    Cabello
-                                </div>
-                                
-                                <h3 class="servicio-nombre-interactive">
-                                    Tinte
-                                </h3>
-                                
-                                <a href="http://127.0.0.1:8000/reservaciones" 
-                                   class="btn-reservar-interactive"
-                                   onclick="event.stopPropagation()">
-                                    <span>Reservar Ahora</span>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="card-back">
-                            <div class="back-info">
-                                <h3 class="back-title">Tinte</h3>
-                                <p class="back-description">
-                                    Descubre una experiencia única diseñada especialmente para ti. 
-                                    Calidad premium y atención personalizada.
-                                </p>
-                                <a href="http://127.0.0.1:8000/reservaciones" 
-                                   class="btn-reservar-interactive"
-                                   style="max-width: 250px; margin: 0 auto;"
-                                   onclick="event.stopPropagation()">
-                                    <span>Reservar</span>
-                                </a>
-                            </div>
-                            <div class="flip-hint">Clic para voltear</div>
-                        </div>
-                        
-                    </div>
-                                                                <div class="card-interactive" 
-                         data-categoria="2"
-                         data-nombre="manicura y pedicura">
-                        
-                        
-                        <div class="card-front">
-                            <div class="imagen-wrapper-interactive">
-                                                                    <img src="http://127.0.0.1:8000/imagen/servicio_1764906238.jpg" 
-                                         alt="Manicura y Pedicura"
-                                         class="imagen-servicio">
-                                                                
-                                <div class="imagen-overlay-interactive">
-                                    <button class="quick-view-btn" onclick="event.stopPropagation()">
-                                        👁 Vista rápida
-                                    </button>
-                                </div>
-                                
-                                <div class="precio-floating">
-                                    $100.00
-                                </div>
-                            </div>
-                            
-                            <div class="card-content-interactive">
-                                <div class="categoria-tag">
-                                    Belleza
-                                </div>
-                                
-                                <h3 class="servicio-nombre-interactive">
-                                    Manicura y Pedicura
-                                </h3>
-                                
-                                <a href="http://127.0.0.1:8000/reservaciones" 
-                                   class="btn-reservar-interactive"
-                                   onclick="event.stopPropagation()">
-                                    <span>Reservar Ahora</span>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="card-back">
-                            <div class="back-info">
-                                <h3 class="back-title">Manicura y Pedicura</h3>
-                                <p class="back-description">
-                                    Descubre una experiencia única diseñada especialmente para ti. 
-                                    Calidad premium y atención personalizada.
-                                </p>
-                                <a href="http://127.0.0.1:8000/reservaciones" 
-                                   class="btn-reservar-interactive"
-                                   style="max-width: 250px; margin: 0 auto;"
-                                   onclick="event.stopPropagation()">
-                                    <span>Reservar</span>
-                                </a>
-                            </div>
-                            <div class="flip-hint">Clic para voltear</div>
-                        </div>
-                        
-                    </div>
-                                                                <div class="card-interactive" 
-                         data-categoria="3"
-                         data-nombre="masaje relajante">
-                        
-                        
-                        <div class="card-front">
-                            <div class="imagen-wrapper-interactive">
-                                                                    <img src="http://127.0.0.1:8000/imagen/sinfoto.jpg" 
-                                         alt="Sin imagen" 
-                                         class="imagen-servicio"
-                                         style="filter: grayscale(100%) brightness(0.7);">
-                                                                
-                                <div class="imagen-overlay-interactive">
-                                    <button class="quick-view-btn" onclick="event.stopPropagation()">
-                                        👁 Vista rápida
-                                    </button>
-                                </div>
-                                
-                                <div class="precio-floating">
-                                    $500.00
-                                </div>
-                            </div>
-                            
-                            <div class="card-content-interactive">
-                                <div class="categoria-tag">
-                                    Spa y Masajes
-                                </div>
-                                
-                                <h3 class="servicio-nombre-interactive">
-                                    Masaje relajante
-                                </h3>
-                                
-                                <a href="http://127.0.0.1:8000/reservaciones" 
-                                   class="btn-reservar-interactive"
-                                   onclick="event.stopPropagation()">
-                                    <span>Reservar Ahora</span>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="card-back">
-                            <div class="back-info">
-                                <h3 class="back-title">Masaje relajante</h3>
-                                <p class="back-description">
-                                    Descubre una experiencia única diseñada especialmente para ti. 
-                                    Calidad premium y atención personalizada.
-                                </p>
-                                <a href="http://127.0.0.1:8000/reservaciones" 
-                                   class="btn-reservar-interactive"
-                                   style="max-width: 250px; margin: 0 auto;"
-                                   onclick="event.stopPropagation()">
-                                    <span>Reservar</span>
-                                </a>
-                            </div>
-                            <div class="flip-hint">Clic para voltear</div>
-                        </div>
-                        
-                    </div>
-                                                                </div>
+    <div class="servicios-grid-interactive" id="serviciosGrid">
         
-        
-        <div class="no-results" id="noResults" style="display: none;">
-            <div class="no-results-icon">🔍</div>
-            <h3>No se encontraron servicios</h3>
-            <p>Intenta con otra búsqueda o categoría</p>
+        <div class="card-interactive" data-categoria="1" data-nombre="corte">
+            <div class="card-front">
+                <div class="imagen-wrapper-interactive">
+                    <img src="imagen/servicio_1764841355.jpg" alt="Corte" class="imagen-servicio">
+                    <div class="imagen-overlay-interactive">
+                        <button class="quick-view-btn" onclick="event.stopPropagation()">👁 Vista rápida</button>
+                    </div>
+                    <div class="precio-floating">$149.99</div>
+                </div>
+                <div class="card-content-interactive">
+                    <div class="categoria-tag">Cabello</div>
+                    <h3 class="servicio-nombre-interactive">Corte</h3>
+                    <a href="reservar.html" class="btn-reservar-interactive" onclick="event.stopPropagation()"><span>Reservar Ahora</span></a>
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="back-info">
+                    <h3 class="back-title">Corte</h3>
+                    <p class="back-description">Descubre una experiencia única diseñada especialmente para ti. Calidad premium y atención personalizada.</p>
+                    <a href="reservar.html" class="btn-reservar-interactive" style="max-width: 250px; margin: 0 auto;" onclick="event.stopPropagation()"><span>Reservar</span></a>
+                </div>
+                <div class="flip-hint">Clic para voltear</div>
+            </div>
         </div>
-        
-        
+
+        <div class="card-interactive" data-categoria="1" data-nombre="tinte">
+            <div class="card-front">
+                <div class="imagen-wrapper-interactive">
+                    <img src="imagen/sinfoto.jpg" alt="Sin imagen" class="imagen-servicio" style="filter: grayscale(100%) brightness(0.7);">
+                    <div class="imagen-overlay-interactive">
+                        <button class="quick-view-btn" onclick="event.stopPropagation()">👁 Vista rápida</button>
+                    </div>
+                    <div class="precio-floating">$280.00</div>
+                </div>
+                <div class="card-content-interactive">
+                    <div class="categoria-tag">Cabello</div>
+                    <h3 class="servicio-nombre-interactive">Tinte</h3>
+                    <a href="reservar.html" class="btn-reservar-interactive" onclick="event.stopPropagation()"><span>Reservar Ahora</span></a>
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="back-info">
+                    <h3 class="back-title">Tinte</h3>
+                    <p class="back-description">Descubre una experiencia única diseñada especialmente para ti. Calidad premium y atención personalizada.</p>
+                    <a href="reservar.html" class="btn-reservar-interactive" style="max-width: 250px; margin: 0 auto;" onclick="event.stopPropagation()"><span>Reservar</span></a>
+                </div>
+                <div class="flip-hint">Clic para voltear</div>
+            </div>
+        </div>
+
+        <div class="card-interactive" data-categoria="2" data-nombre="manicura y pedicura">
+            <div class="card-front">
+                <div class="imagen-wrapper-interactive">
+                    <img src="imagen/servicio_1764906238.jpg" alt="Manicura y Pedicura" class="imagen-servicio">
+                    <div class="imagen-overlay-interactive">
+                        <button class="quick-view-btn" onclick="event.stopPropagation()">👁 Vista rápida</button>
+                    </div>
+                    <div class="precio-floating">$100.00</div>
+                </div>
+                <div class="card-content-interactive">
+                    <div class="categoria-tag">Belleza</div>
+                    <h3 class="servicio-nombre-interactive">Manicura y Pedicura</h3>
+                    <a href="reservar.html" class="btn-reservar-interactive" onclick="event.stopPropagation()"><span>Reservar Ahora</span></a>
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="back-info">
+                    <h3 class="back-title">Manicura y Pedicura</h3>
+                    <p class="back-description">Descubre una experiencia única diseñada especialmente para ti. Calidad premium y atención personalizada.</p>
+                    <a href="reservar.html" class="btn-reservar-interactive" style="max-width: 250px; margin: 0 auto;" onclick="event.stopPropagation()"><span>Reservar</span></a>
+                </div>
+                <div class="flip-hint">Clic para voltear</div>
+            </div>
+        </div>
+
+        <div class="card-interactive" data-categoria="3" data-nombre="masaje relajante">
+            <div class="card-front">
+                <div class="imagen-wrapper-interactive">
+                    <img src="imagen/sinfoto.jpg" alt="Sin imagen" class="imagen-servicio" style="filter: grayscale(100%) brightness(0.7);">
+                    <div class="imagen-overlay-interactive">
+                        <button class="quick-view-btn" onclick="event.stopPropagation()">👁 Vista rápida</button>
+                    </div>
+                    <div class="precio-floating">$500.00</div>
+                </div>
+                <div class="card-content-interactive">
+                    <div class="categoria-tag">Spa y Masajes</div>
+                    <h3 class="servicio-nombre-interactive">Masaje relajante</h3>
+                    <a href="reservar.html" class="btn-reservar-interactive" onclick="event.stopPropagation()"><span>Reservar Ahora</span></a>
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="back-info">
+                    <h3 class="back-title">Masaje relajante</h3>
+                    <p class="back-description">Descubre una experiencia única diseñada especialmente para ti. Calidad premium y atención personalizada.</p>
+                    <a href="reservar.html" class="btn-reservar-interactive" style="max-width: 250px; margin: 0 auto;" onclick="event.stopPropagation()"><span>Reservar</span></a>
+                </div>
+                <div class="flip-hint">Clic para voltear</div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="no-results" id="noResults" style="display: none;">
+        <div class="no-results-icon">🔍</div>
+        <h3>No se encontraron servicios</h3>
+        <p>Intenta con otra búsqueda o categoría</p>
+    </div>
 </div>
 
 <script>
@@ -1010,14 +608,11 @@ document.addEventListener('DOMContentLoaded', function() {
         hero.addEventListener('mousemove', function(e) {
             const mouseX = e.clientX / window.innerWidth;
             const mouseY = e.clientY / window.innerHeight;
-            
             const moveX = (mouseX - 0.5) * 50;
             const moveY = (mouseY - 0.5) * 50;
-            
-            parallaxLayer.style.transform = translate(${moveX}px, ${moveY}px);
-            
+            parallaxLayer.style.transform = `translate(${moveX}px, ${moveY}px)`;
             if (heroContent) {
-                heroContent.style.transform = translate(${moveX * 0.3}px, ${moveY * 0.3}px);
+                heroContent.style.transform = `translate(${moveX * 0.3}px, ${moveY * 0.3}px)`;
             }
         });
         
@@ -1047,7 +642,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (searchInput) {
         searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase().trim();
             filterServices();
         });
     }
@@ -1086,12 +680,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Actualizar contador
         if (resultCount) {
             resultCount.textContent = visibleCount;
         }
         
-        // Mostrar/ocultar mensaje "no results"
         if (noResults && serviciosGrid) {
             if (visibleCount === 0) {
                 noResults.style.display = 'block';
@@ -1131,7 +723,6 @@ document.addEventListener('DOMContentLoaded', function() {
     <footer>
         <div class="footer-content">
             <p>"Luce radiante, siéntete tú"</p>
-            
             <p>© 2025 AURA BEAUTY & SPA. Todos los derechos reservados.</p>
         </div>
     </footer>

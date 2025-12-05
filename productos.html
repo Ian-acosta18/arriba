@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA BEAUTY & SPA - Luce radiante, siéntete tú</title>
+    
+    
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/style.css">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&family=Dancing+Script&display=swap" rel="stylesheet">
+
+    
+    <style>
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--color-principal, #B98D7B);
+            padding-bottom: 1rem;
+        }
+
+        .tabla-admin {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tabla-admin th {
+            background-color: var(--color-principal, #B98D7B);
+            color: white;
+            padding: 1rem;
+            font-family: 'Playfair Display', serif;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        .tabla-admin td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            color: var(--color-texto, #5c4b45);
+        }
+
+        .tabla-admin tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Botones de Acción (Editar/Borrar) */
+        .btn-accion {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-accion:hover { opacity: 0.8; }
+        .btn-editar { background-color: #f0ad4e; color: white; }
+        .btn-borrar { background-color: #d9534f; color: white; }
+
+        /* Botón "Nuevo" */
+        .btn-nuevo {
+            background-color: var(--color-principal, #B98D7B);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .btn-nuevo:hover {
+            background-color: #a57c6b;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>AURA</h1>
+            <h2>BEAUTY & SPA</h2>
+        </div>
+        <nav>
+            <ul>
+                
+                <li><a href="http://127.0.0.1:8000">Inicio</a></li>
+                <li><a href="http://127.0.0.1:8000/servicios">Servicios</a></li>
+                <li><a href="http://127.0.0.1:8000/instalaciones">Instalaciones</a></li>
+                <li><a href="http://127.0.0.1:8000/productos">Productos</a></li>
+                <li><a href="http://127.0.0.1:8000/nosotros">Nosotros</a></li>
+                <li><a href="http://127.0.0.1:8000/contacto">Contacto</a></li>
+                
+                
+                <li><a href="http://127.0.0.1:8000/reservaciones" class="btn-reserva">Reservar Cita</a></li>
+                
+                
+                <li><a href="http://127.0.0.1:8000/administrador" class="btn-reserva">Administrador</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        
+
+<section class="hero-boutique fade-in">
+    <div class="hero-boutique-content">
+        <span class="etiqueta-destacada">Aura Home Care</span>
+        <h1>Boutique Exclusiva</h1>
+        <p>Lleva la magia del spa contigo. Productos seleccionados por nuestros expertos para prolongar tu bienestar en casa.</p>
+    </div>
+</section>
+
+
+<div class="productos-container">
+    <div class="productos-grid">
+                                    <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/mochila_tommy.jpg" alt="Mochila Tommy">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Mochila Tommy</h3>
+                            
+                            <p class="descripcion">Mochila elegante marca Tommy.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,700.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/bolso_aldo.jpg" alt="Bolso Aldo">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Bolso Aldo</h3>
+                            
+                            <p class="descripcion">Bolso de mano marca Aldo.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,350.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/bolso_mk.jpg" alt="Bolso Michael Kors">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Bolso Michael Kors</h3>
+                            
+                            <p class="descripcion">Bolso de lujo MK.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$2,460.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/bolso_casual.jpg" alt="Bolso Casual">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Bolso Casual</h3>
+                            
+                            <p class="descripcion">Bolso cómodo.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,600.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/monedero_coach.jpg" alt="Monedero Coach">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Monedero Coach</h3>
+                            
+                            <p class="descripcion">Monedero práctico.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,700.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/monedero_coach2.jpg" alt="Monedero Coach 2">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Monedero Coach 2</h3>
+                            
+                            <p class="descripcion">Estilo compacto.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,000.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/tarjetero_coach.jpg" alt="Tarjetero Coach">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Tarjetero Coach</h3>
+                            
+                            <p class="descripcion">Tarjetero minimalista.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,500.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                        </div>
+</div>
+
+
+<section class="asesoria-banner">
+    <div class="asesoria-content">
+        <h2>¿No sabes qué necesita tu piel?</h2>
+        <p>Nuestras especialistas pueden realizarte un diagnóstico gratuito en tu próxima visita para recomendarte la rutina ideal.</p>
+        <a href="http://127.0.0.1:8000/reservaciones" class="link-asesoria">Agendar Diagnóstico &rarr;</a>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>"Luce radiante, siéntete tú"</p>
+            
+            <p>© 2025 AURA BEAUTY & SPA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

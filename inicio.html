@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA BEAUTY & SPA - Luce radiante, siéntete tú</title>
+    
+    
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/style.css">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&family=Dancing+Script&display=swap" rel="stylesheet">
+
+    
+    <style>
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--color-principal, #B98D7B);
+            padding-bottom: 1rem;
+        }
+
+        .tabla-admin {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tabla-admin th {
+            background-color: var(--color-principal, #B98D7B);
+            color: white;
+            padding: 1rem;
+            font-family: 'Playfair Display', serif;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        .tabla-admin td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            color: var(--color-texto, #5c4b45);
+        }
+
+        .tabla-admin tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Botones de Acción (Editar/Borrar) */
+        .btn-accion {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-accion:hover { opacity: 0.8; }
+        .btn-editar { background-color: #f0ad4e; color: white; }
+        .btn-borrar { background-color: #d9534f; color: white; }
+
+        /* Botón "Nuevo" */
+        .btn-nuevo {
+            background-color: var(--color-principal, #B98D7B);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .btn-nuevo:hover {
+            background-color: #a57c6b;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>AURA</h1>
+            <h2>BEAUTY & SPA</h2>
+        </div>
+        <nav>
+            <ul>
+                
+                <li><a href="http://127.0.0.1:8000">Inicio</a></li>
+                <li><a href="http://127.0.0.1:8000/servicios">Servicios</a></li>
+                <li><a href="http://127.0.0.1:8000/instalaciones">Instalaciones</a></li>
+                <li><a href="http://127.0.0.1:8000/productos">Productos</a></li>
+                <li><a href="http://127.0.0.1:8000/nosotros">Nosotros</a></li>
+                <li><a href="http://127.0.0.1:8000/contacto">Contacto</a></li>
+                
+                
+                <li><a href="http://127.0.0.1:8000/reservaciones" class="btn-reserva">Reservar Cita</a></li>
+                
+                
+                <li><a href="http://127.0.0.1:8000/administrador" class="btn-reserva">Administrador</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        
+
+<section class="hero-inicio fade-in">
+    <div class="hero-contenido-inicio">
+        <span class="subtitulo-decorativo">Bienestar & Armonía</span>
+        <h1>Tu Santuario de <br>Belleza y Calma</h1>
+        <p>En AURA, cada tratamiento es un ritual personalizado. Redescubre tu brillo interior en un ambiente diseñado para tu total relajación.</p>
+        <div class="botones-hero">
+            <a href="http://127.0.0.1:8000/reservaciones" class="btn-inicio-reserva">Agenda tu Cita</a>
+            <a href="http://127.0.0.1:8000/servicios" class="btn-secundario">Ver Servicios</a>
+        </div>
+    </div>
+    <div class="hero-imagen-decorativa">
+        
+        <div class="marco-imagen">
+            <img src="http://127.0.0.1:8000/imagen/spa_risos_corona.jpg" alt="Experiencia Aura Spa">
+        </div>
+    </div>
+</section>
+
+
+<section class="seccion-valores">
+    <div class="valor-card">
+        <div class="icono">🌿</div>
+        <h3>Productos Orgánicos</h3>
+        <p>Utilizamos solo ingredientes naturales y libres de crueldad animal.</p>
+    </div>
+    <div class="valor-card">
+        <div class="icono">✨</div>
+        <h3>Expertos Certificados</h3>
+        <p>Tu belleza en manos de profesionales con años de experiencia.</p>
+    </div>
+    <div class="valor-card">
+        <div class="icono">🕯</div>
+        <h3>Ambiente Zen</h3>
+        <p>Un espacio diseñado para desconectar del estrés diario.</p>
+    </div>
+</section>
+
+
+<section class="seccion-destacados">
+    <h2 class="seccion-titulo">Nuestros Rituales Favoritos</h2>
+    <p class="texto-centro">Descubre los tratamientos más solicitados por nuestros clientes</p>
+    
+    <div class="grid-destacados">
+        
+        <div class="card-destacado">
+            <div class="img-container">
+                <img src="http://127.0.0.1:8000/imagen/spa_uñas_aura.jpg" alt="Manicure Spa">
+            </div>
+            <div class="info-destacado">
+                <h3>Manicure Spa</h3>
+                <p>Renovación total para tus manos.</p>
+                <a href="http://127.0.0.1:8000/servicios" class="link-detalle">Saber más &rarr;</a>
+            </div>
+        </div>
+
+        
+        <div class="card-destacado">
+            <div class="img-container">
+                <img src="http://127.0.0.1:8000/imagen/spa_risos.jpg" alt="Tratamiento Capilar">
+            </div>
+            <div class="info-destacado">
+                <h3>Tratamiento Capilar</h3>
+                <p>Hidratación profunda y brillo.</p>
+                <a href="http://127.0.0.1:8000/servicios" class="link-detalle">Saber más &rarr;</a>
+            </div>
+        </div>
+
+        
+        <div class="card-destacado">
+            <div class="img-container">
+                <img src="http://127.0.0.1:8000/imagen/spa_cama_lacer.jpg" alt="Masajes Relajantes">
+            </div>
+            <div class="info-destacado">
+                <h3>Masajes Relajantes</h3>
+                <p>Libera la tensión acumulada.</p>
+                <a href="http://127.0.0.1:8000/servicios" class="link-detalle">Saber más &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="seccion-testimonios">
+    <div class="contenido-testimonio">
+        <h2 class="seccion-titulo">Lo que dicen de Aura</h2>
+        <blockquote class="cita-destacada">
+            "Es el mejor lugar para desconectarse. El tratamiento facial me dejó la piel increíble y la atención es de primer nivel. ¡Volveré seguro!"
+        </blockquote>
+        <cite>- Mariana G., Cliente Frecuente</cite>
+    </div>
+</section>
+
+
+<section class="cta-final">
+    <h2>¿Lista para consentirte?</h2>
+    <p>Reserva hoy y obtén un diagnóstico de piel gratuito.</p>
+    <a href="http://127.0.0.1:8000/reservaciones" class="btn-inicio-reserva btn-blanco">Reservar Ahora</a>
+</section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>"Luce radiante, siéntete tú"</p>
+            
+            <p>© 2025 AURA BEAUTY & SPA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

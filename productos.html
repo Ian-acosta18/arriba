@@ -5,22 +5,278 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA BEAUTY & SPA - Luce radiante, siéntete tú</title>
     
-    
-    <link rel="stylesheet" href="http://127.0.0.1:8000/css/style.css">
-    
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&family=Dancing+Script&display=swap" rel="stylesheet">
 
-    
     <style>
+        /* --- VARIABLES Y RESET GENERAL --- */
+        :root {
+            --color-principal: #B98D7B; /* Color extraído de tu código */
+            --color-principal-dark: #a57c6b;
+            --color-texto: #5c4b45;
+            --color-fondo: #fcfcfc;
+            --blanco: #ffffff;
+            --sombra: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER Y NAV --- */
+        header {
+            background-color: var(--blanco);
+            box-shadow: var(--sombra);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            color: var(--color-principal);
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin-bottom: -5px;
+        }
+
+        .logo h2 {
+            font-size: 0.8rem;
+            color: var(--color-texto);
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-principal);
+        }
+
+        .btn-reserva {
+            background-color: var(--color-principal);
+            color: var(--blanco);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .btn-reserva:hover {
+            background-color: var(--color-principal-dark);
+            color: var(--blanco);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-boutique {
+            background-color: #f5ece9; /* Tono suave acorde a la marca */
+            padding: 4rem 5%;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .etiqueta-destacada {
+            display: inline-block;
+            background: var(--blanco);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--color-principal);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-boutique h1 {
+            font-size: 3rem;
+            color: var(--color-texto);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PRODUCTOS GRID --- */
+        .productos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-bottom: 4rem;
+        }
+
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .producto-card-premium {
+            background: var(--blanco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .producto-card-premium:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .img-wrapper {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen llene el espacio */
+            transition: transform 0.5s ease;
+        }
+
+        .producto-card-premium:hover .img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .badge-nuevo {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--color-principal);
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .info-wrapper {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .info-top h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .descripcion {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .info-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .precio {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-texto);
+        }
+
+        .btn-comprar-icon {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-principal);
+            transition: color 0.2s;
+        }
+
+        .btn-comprar-icon:hover {
+            color: var(--color-principal-dark);
+            text-decoration: underline;
+        }
+
+        /* --- BANNER ASESORIA --- */
+        .asesoria-banner {
+            background-color: var(--color-principal);
+            color: var(--blanco);
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .asesoria-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .link-asesoria {
+            display: inline-block;
+            margin-top: 1rem;
+            border: 1px solid var(--blanco);
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .link-asesoria:hover {
+            background: var(--blanco);
+            color: var(--color-principal);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #2c2420;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- ESTILOS ADMIN (Los que tenías originalmente) --- */
         .admin-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-            border-bottom: 2px solid var(--color-principal, #B98D7B);
+            border-bottom: 2px solid var(--color-principal);
             padding-bottom: 1rem;
         }
 
@@ -35,7 +291,7 @@
         }
 
         .tabla-admin th {
-            background-color: var(--color-principal, #B98D7B);
+            background-color: var(--color-principal);
             color: white;
             padding: 1rem;
             font-family: 'Playfair Display', serif;
@@ -46,14 +302,13 @@
         .tabla-admin td {
             padding: 1rem;
             border-bottom: 1px solid #eee;
-            color: var(--color-texto, #5c4b45);
+            color: var(--color-texto);
         }
 
         .tabla-admin tr:last-child td {
             border-bottom: none;
         }
 
-        /* Botones de Acción (Editar/Borrar) */
         .btn-accion {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -70,9 +325,8 @@
         .btn-editar { background-color: #f0ad4e; color: white; }
         .btn-borrar { background-color: #d9534f; color: white; }
 
-        /* Botón "Nuevo" */
         .btn-nuevo {
-            background-color: var(--color-principal, #B98D7B);
+            background-color: var(--color-principal);
             color: white;
             padding: 0.8rem 1.5rem;
             text-decoration: none;
@@ -86,6 +340,18 @@
             background-color: #a57c6b;
             transform: translateY(-2px);
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,356 +363,252 @@
         </div>
         <nav>
             <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="instalaciones.html">Instalaciones</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
                 
-                <li><a href="http://127.0.0.1:8000">Inicio</a></li>
-                <li><a href="http://127.0.0.1:8000/servicios">Servicios</a></li>
-                <li><a href="http://127.0.0.1:8000/instalaciones">Instalaciones</a></li>
-                <li><a href="http://127.0.0.1:8000/productos">Productos</a></li>
-                <li><a href="http://127.0.0.1:8000/nosotros">Nosotros</a></li>
-                <li><a href="http://127.0.0.1:8000/contacto">Contacto</a></li>
-                
-                
-                <li><a href="http://127.0.0.1:8000/reservaciones" class="btn-reserva">Reservar Cita</a></li>
-                
-                
-                <li><a href="http://127.0.0.1:8000/administrador" class="btn-reserva">Administrador</a></li>
+                <li><a href="reservaciones.html" class="btn-reserva">Reservar Cita</a></li>
+                <li><a href="administrador.html" class="btn-reserva">Administrador</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        
-        
 
-<section class="hero-boutique fade-in">
-    <div class="hero-boutique-content">
-        <span class="etiqueta-destacada">Aura Home Care</span>
-        <h1>Boutique Exclusiva</h1>
-        <p>Lleva la magia del spa contigo. Productos seleccionados por nuestros expertos para prolongar tu bienestar en casa.</p>
-    </div>
-</section>
+        <section class="hero-boutique fade-in">
+            <div class="hero-boutique-content">
+                <span class="etiqueta-destacada">Aura Home Care</span>
+                <h1>Boutique Exclusiva</h1>
+                <p>Lleva la magia del spa contigo. Productos seleccionados por nuestros expertos para prolongar tu bienestar en casa.</p>
+            </div>
+        </section>
 
-
-<div class="productos-container">
-    <div class="productos-grid">
-                                    <div class="producto-card-premium">
+        <div class="productos-container">
+            <div class="productos-grid">
+                
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764923879_bolso_negro_coach.jpg" alt="Bolsa New York Coach">
-                        
-                        
+                        <img src="imagen/1764923879_bolso_negro_coach.jpg" alt="Bolsa New York Coach">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>Bolsa New York Coach</h3>
-                            
                             <p class="descripcion">Bolso negro New York Coach</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$1,450.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764924407_tarjetero_coach.jpg" alt="Tarjetera New York Coach">
-                        
-                        
+                        <img src="imagen/1764924407_tarjetero_coach.jpg" alt="Tarjetera New York Coach">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>Tarjetera New York Coach</h3>
-                            
                             <p class="descripcion">Tarjetera minimalista color negra con detalles en café</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$1,200.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764924712_monedero_coach2.jpg" alt="Cartera New York Coach">
-                        
-                        
+                        <img src="imagen/1764924712_monedero_coach2.jpg" alt="Cartera New York Coach">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>Cartera New York Coach</h3>
-                            
                             <p class="descripcion">Cartera negra con agarradera a un costado.</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$1,000.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764925159_bolso_mk.jpg" alt="Bolsa Michael Kors">
-                        
-                        
+                        <img src="imagen/1764925159_bolso_mk.jpg" alt="Bolsa Michael Kors">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>Bolsa Michael Kors</h3>
-                            
                             <p class="descripcion">Bolsa de alta calidad color gris y crema.</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$2,460.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764925238_bolso_aldo.jpg" alt="Bolso Aldo">
-                        
-                        
+                        <img src="imagen/1764925238_bolso_aldo.jpg" alt="Bolso Aldo">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>Bolso Aldo</h3>
-                            
                             <p class="descripcion">Bolso de color rosa, pastel con un diseño seguro.</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$1,350.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764925432_bolso_casual.jpg" alt="Bandolera">
-                        
-                        
+                        <img src="imagen/1764925432_bolso_casual.jpg" alt="Bandolera">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>Bandolera</h3>
-                            
-                            <p class="descripcion">Es una bandolera de piel sistématica , marrón y blanca</p>
+                            <p class="descripcion">Es una bandolera de piel sistématica, marrón y blanca</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$1,600.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764925604_alasiante_temporal.jpg" alt="Alasiante">
-                        
-                        
+                        <img src="imagen/1764925604_alasiante_temporal.jpg" alt="Alasiante">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>Alasiante</h3>
-                            
                             <p class="descripcion">Alasiante temporal progresivo</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$300.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764925791_colageno_en_emulsion.jpg" alt="Colageno en emulsión">
-                        
-                        
+                        <img src="imagen/1764925791_colageno_en_emulsion.jpg" alt="Colageno en emulsión">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>Colageno en emulsión</h3>
-                            
-                            <p class="descripcion">Colageno en emulsión| Protector-Infusión|Pre-Proceso Capilar</p>
+                            <p class="descripcion">Colageno en emulsión | Protector-Infusión | Pre-Proceso Capilar</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$300.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764925896_dual_color_matice.jpg" alt="Dual Color Matice">
-                        
-                        
+                        <img src="imagen/1764925896_dual_color_matice.jpg" alt="Dual Color Matice">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>Dual Color Matice</h3>
-                            
-                            <p class="descripcion">Mascarilla matiz | Neutraliza Visos | Amarillo / Naranjosos | Violeta 35 / Azul 65</p>
+                            <p class="descripcion">Mascarilla matiz | Neutraliza Visos | Amarillo / Naranjosos</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$300.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764926009_fresh_curls_liss.jpg" alt="Fresh Curls &amp; Liss">
-                        
-                        
+                        <img src="imagen/1764926009_fresh_curls_liss.jpg" alt="Fresh Curls & Liss">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
-                            <h3>Fresh Curls &amp; Liss</h3>
-                            
+                            <h3>Fresh Curls & Liss</h3>
                             <p class="descripcion">Rizos definidos o cabello liso y brillante antifrizz</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$300.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764926151_bi_phaseta_texturi.jpg" alt="BI- PHASETA TEXTURI">
-                        
-                        
+                        <img src="imagen/1764926151_bi_phaseta_texturi.jpg" alt="BI- PHASETA TEXTURI">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>BI- PHASETA TEXTURI</h3>
-                            
                             <p class="descripcion">Tratamiento desenredarte alto nivel hidratacion y acondicionamiento</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$300.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                            <div class="producto-card-premium">
+
+                <div class="producto-card-premium">
                     <div class="img-wrapper">
-                        
-                        <img src="http://127.0.0.1:8000/imagen/1764926245_gel_force_anti_caida.jpg" alt="GelForce">
-                        
-                        
+                        <img src="imagen/1764926245_gel_force_anti_caida.jpg" alt="GelForce">
                         <span class="badge-nuevo">Recomendado</span>
                     </div>
-                    
                     <div class="info-wrapper">
                         <div class="info-top">
                             <h3>GelForce</h3>
-                            
-                            <p class="descripcion">GelForce, Anti-caida. Gel de fijacion extrema de cebo - regulador absorvente</p>
+                            <p class="descripcion">GelForce, Anti-caida. Gel de fijacion extrema de cebo</p>
                         </div>
-                        
                         <div class="info-bottom">
                             <span class="precio">$320.00</span>
-                            
-                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
-                                🛍 Adquirir
-                            </a>
+                            <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
                         </div>
                     </div>
                 </div>
-                        </div>
-</div>
 
+            </div>
+        </div>
 
-<section class="asesoria-banner">
-    <div class="asesoria-content">
-        <h2>¿No sabes qué necesita tu piel?</h2>
-        <p>Nuestras especialistas pueden realizarte un diagnóstico gratuito en tu próxima visita para recomendarte la rutina ideal.</p>
-        <a href="http://127.0.0.1:8000/reservaciones" class="link-asesoria">Agendar Diagnóstico &rarr;</a>
-    </div>
-</section>
+        <section class="asesoria-banner">
+            <div class="asesoria-content">
+                <h2>¿No sabes qué necesita tu piel?</h2>
+                <p>Nuestras especialistas pueden realizarte un diagnóstico gratuito en tu próxima visita para recomendarte la rutina ideal.</p>
+                <a href="reservaciones.html" class="link-asesoria">Agendar Diagnóstico &rarr;</a>
+            </div>
+        </section>
 
     </main>
 
     <footer>
         <div class="footer-content">
             <p>"Luce radiante, siéntete tú"</p>
-            
             <p>© 2025 AURA BEAUTY & SPA. Todos los derechos reservados.</p>
         </div>
     </footer>

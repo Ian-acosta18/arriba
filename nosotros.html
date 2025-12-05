@@ -17,21 +17,16 @@
             --color-texto: #5c4b45;
             --color-fondo: #fcfcfc;
             --color-tarjeta: #ffffff;
-            --color-acento-claro: #e8d5cf; /* Tono derivado para fondos suaves */
+            --color-acento-claro: #e8d5cf;
             --blanco: #ffffff;
             --sombra: 0 5px 15px rgba(0,0,0,0.08);
             
-            /* Fuentes */
             --fuente-texto: 'Lato', sans-serif;
             --fuente-titulos: 'Playfair Display', serif;
             --fuente-cursiva: 'Dancing Script', cursive;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: var(--fuente-texto);
@@ -41,20 +36,11 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: var(--fuente-titulos);
-        }
+        h1, h2, h3, h4 { font-family: var(--fuente-titulos); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* --- HEADER Y NAV (Consistente con index.html) --- */
+        /* --- HEADER Y NAV --- */
         header {
             background-color: var(--blanco);
             box-shadow: var(--sombra);
@@ -91,9 +77,7 @@
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--color-principal);
-        }
+        nav a:hover { color: var(--color-principal); }
 
         .btn-reserva {
             background-color: var(--color-principal);
@@ -109,14 +93,12 @@
         }
 
         /* --- ESTILOS ESPECÍFICOS PAGINA NOSOTROS --- */
-        
         .nosotros-wrapper {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem 4rem 2rem;
         }
 
-        /* Header de sección */
         .header-nosotros {
             text-align: center;
             padding: 4rem 1rem;
@@ -142,7 +124,6 @@
             opacity: 0.8;
         }
 
-        /* Intro */
         .intro-bloque {
             max-width: 800px;
             margin: 0 auto 5rem auto;
@@ -157,7 +138,6 @@
             padding-bottom: 2rem;
         }
 
-        /* Layout Zig-Zag */
         .bloque-zigzag {
             display: flex;
             align-items: center;
@@ -165,13 +145,9 @@
             margin-bottom: 6rem;
         }
 
-        .bloque-zigzag.inverso {
-            flex-direction: row-reverse;
-        }
+        .bloque-zigzag.inverso { flex-direction: row-reverse; }
 
-        .bloque-texto {
-            flex: 1;
-        }
+        .bloque-texto { flex: 1; }
 
         .bloque-imagen {
             flex: 1;
@@ -180,16 +156,14 @@
 
         .bloque-imagen img {
             width: 100%;
-            height: 400px; /* Altura fija para consistencia */
+            height: 400px;
             border-radius: 20px 0 20px 0;
             box-shadow: 10px 10px 30px rgba(92, 75, 69, 0.15);
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .bloque-imagen:hover img {
-            transform: scale(1.02);
-        }
+        .bloque-imagen:hover img { transform: scale(1.02); }
 
         .bloque-texto h3 {
             font-family: var(--fuente-titulos);
@@ -227,7 +201,6 @@
             padding-left: 1rem;
         }
 
-        /* Sección Valores */
         .seccion-valores {
             margin-bottom: 6rem;
             padding: 3rem;
@@ -290,7 +263,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Compromiso */
         .seccion-compromiso {
             background: var(--color-tarjeta);
             padding: 4rem;
@@ -334,7 +306,6 @@
             color: var(--color-principal);
         }
 
-        /* CTA */
         .cta-nosotros {
             position: relative;
             padding: 4rem 2rem;
@@ -394,7 +365,6 @@
             background-color: var(--color-acento-claro);
         }
 
-        /* Footer */
         footer {
             background-color: #2c2420;
             color: #ccc;
@@ -404,44 +374,15 @@
             margin-top: 4rem;
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
-            .bloque-zigzag, 
-            .bloque-zigzag.inverso {
-                flex-direction: column;
-                gap: 2rem;
-                margin-bottom: 4rem;
-            }
-
-            .bloque-imagen {
-                order: -1;
-                width: 100%;
-            }
-
-            .valores-grid {
-                flex-direction: column;
-            }
-
-            .lista-columnas {
-                grid-template-columns: 1fr;
-            }
-
-            .seccion-titulo {
-                font-size: 2.5rem;
-            }
-
-            .seccion-compromiso {
-                padding: 2rem;
-            }
-            
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+            .bloque-zigzag, .bloque-zigzag.inverso { flex-direction: column; gap: 2rem; margin-bottom: 4rem; }
+            .bloque-imagen { order: -1; width: 100%; }
+            .valores-grid { flex-direction: column; }
+            .lista-columnas { grid-template-columns: 1fr; }
+            .seccion-titulo { font-size: 2.5rem; }
+            .seccion-compromiso { padding: 2rem; }
+            header { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
@@ -460,9 +401,7 @@
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                
-                <li><a href="reservaciones.html" class="btn-reserva">Reservar Cita</a></li>
-                <li><a href="administrador.html" class="btn-reserva">Administrador</a></li>
+                <li><a href="reservar.html" class="btn-reserva">Reservar Cita</a></li>
             </ul>
         </nav>
     </header>
@@ -565,7 +504,7 @@
                 <div class="cta-contenido">
                     <h2>¿Lista para tu transformación?</h2>
                     <p>El momento de cuidarte es ahora.</p>
-                    <a href="reservaciones.html" class="btn-agendar">Agenda tu cita hoy</a>
+                    <a href="reservar.html" class="btn-agendar">Agenda tu cita hoy</a>
                 </div>
             </div>
         </div>

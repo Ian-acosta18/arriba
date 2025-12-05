@@ -11,6 +11,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos del Admin (Mantenidos por seguridad, aunque no se usen en esta vista) */
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--color-principal, #B98D7B); padding-bottom: 1rem; }
+        .tabla-admin { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+        .tabla-admin th { background-color: var(--color-principal, #B98D7B); color: white; padding: 1rem; font-family: 'Playfair Display', serif; text-align: left; font-weight: normal; }
+        .tabla-admin td { padding: 1rem; border-bottom: 1px solid #eee; color: var(--color-texto, #5c4b45); }
+        .tabla-admin tr:last-child td { border-bottom: none; }
+        .btn-accion { display: inline-block; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem; margin-right: 5px; border: none; cursor: pointer; transition: opacity 0.3s ease; }
+        .btn-accion:hover { opacity: 0.8; }
+        .btn-editar { background-color: #f0ad4e; color: white; }
+        .btn-borrar { background-color: #d9534f; color: white; }
+        .btn-nuevo { background-color: var(--color-principal, #B98D7B); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-family: 'Playfair Display', serif; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .btn-nuevo:hover { background-color: #a57c6b; transform: translateY(-2px); }
+    </style>
 </head>
 <body>
 
@@ -27,7 +42,9 @@
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
+                
                 <li><a href="reservar.html" class="btn-reserva">Reservar Cita</a></li>
+                <li><a href="#" class="btn-reserva" onclick="alert('Área administrativa no disponible en versión estática')">Administrador</a></li>
             </ul>
         </nav>
     </header>
@@ -35,7 +52,7 @@
     <main>
         
 <style>
-    /* Estilos específicos de servicios (mantenidos del original) */
+    /* Estilos Específicos de Servicios */
     :root {
         --primario: #B98D7B;
         --secundario: #5c4b45;
@@ -477,13 +494,23 @@
 </div>
 
 <div class="filters-wrapper" id="filtersWrapper">
-    <button class="filter-chip active" data-categoria="todos">Todos <span class="count" id="countTodos">4</span></button>
-    <button class="filter-chip" data-categoria="1">Cabello <span class="count">2</span></button>
-    <button class="filter-chip" data-categoria="2">Belleza <span class="count">1</span></button>
-    <button class="filter-chip" data-categoria="3">Spa y Masajes <span class="count">1</span></button>
+    <button class="filter-chip active" data-categoria="todos">
+        Todos <span class="count" id="countTodos">4</span>
+    </button>
+    <button class="filter-chip" data-categoria="1">
+        Cabello <span class="count">2</span>
+    </button>
+    <button class="filter-chip" data-categoria="2">
+        Belleza <span class="count">1</span>
+    </button>
+    <button class="filter-chip" data-categoria="3">
+        Spa y Masajes <span class="count">1</span>
+    </button>
 </div>
 
-<div class="results-counter" id="resultsCounter">Mostrando <strong id="resultCount">4</strong> servicios</div>
+<div class="results-counter" id="resultsCounter">
+    Mostrando <strong id="resultCount">4</strong> servicios
+</div>
 
 <div class="container pb-5">
     <div class="servicios-grid-interactive" id="serviciosGrid">
@@ -491,7 +518,7 @@
         <div class="card-interactive" data-categoria="1" data-nombre="corte">
             <div class="card-front">
                 <div class="imagen-wrapper-interactive">
-                    <img src="imagen/corte-cabello.jpg" alt="Corte de cabello" class="imagen-servicio">
+                    <img src="imagen/servicio_1764841355.jpg" alt="Corte" class="imagen-servicio">
                     <div class="imagen-overlay-interactive">
                         <button class="quick-view-btn" onclick="event.stopPropagation()">👁 Vista rápida</button>
                     </div>
@@ -516,7 +543,7 @@
         <div class="card-interactive" data-categoria="1" data-nombre="tinte">
             <div class="card-front">
                 <div class="imagen-wrapper-interactive">
-                    <img src="imagen/sinfoto.jpg" alt="Sin imagen" class="imagen-servicio" style="filter: grayscale(100%) brightness(0.7);">
+                    <img src="imagen/servicio_1764919080.jpg" alt="Tinte" class="imagen-servicio">
                     <div class="imagen-overlay-interactive">
                         <button class="quick-view-btn" onclick="event.stopPropagation()">👁 Vista rápida</button>
                     </div>
@@ -563,10 +590,10 @@
             </div>
         </div>
 
-        <div class="card-interactive" data-categoria="3" data-nombre="masaje relajante">
+        <div class="card-interactive" data-categoria="3" data-nombre="facial">
             <div class="card-front">
                 <div class="imagen-wrapper-interactive">
-                    <img src="imagen/sinfoto.jpg" alt="Sin imagen" class="imagen-servicio" style="filter: grayscale(100%) brightness(0.7);">
+                    <img src="imagen/servicio_1764919065.jpg" alt="Facial" class="imagen-servicio">
                     <div class="imagen-overlay-interactive">
                         <button class="quick-view-btn" onclick="event.stopPropagation()">👁 Vista rápida</button>
                     </div>
@@ -574,13 +601,13 @@
                 </div>
                 <div class="card-content-interactive">
                     <div class="categoria-tag">Spa y Masajes</div>
-                    <h3 class="servicio-nombre-interactive">Masaje relajante</h3>
+                    <h3 class="servicio-nombre-interactive">Facial</h3>
                     <a href="reservar.html" class="btn-reservar-interactive" onclick="event.stopPropagation()"><span>Reservar Ahora</span></a>
                 </div>
             </div>
             <div class="card-back">
                 <div class="back-info">
-                    <h3 class="back-title">Masaje relajante</h3>
+                    <h3 class="back-title">Facial</h3>
                     <p class="back-description">Descubre una experiencia única diseñada especialmente para ti. Calidad premium y atención personalizada.</p>
                     <a href="reservar.html" class="btn-reservar-interactive" style="max-width: 250px; margin: 0 auto;" onclick="event.stopPropagation()"><span>Reservar</span></a>
                 </div>
@@ -608,9 +635,12 @@ document.addEventListener('DOMContentLoaded', function() {
         hero.addEventListener('mousemove', function(e) {
             const mouseX = e.clientX / window.innerWidth;
             const mouseY = e.clientY / window.innerHeight;
+            
             const moveX = (mouseX - 0.5) * 50;
             const moveY = (mouseY - 0.5) * 50;
+            
             parallaxLayer.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            
             if (heroContent) {
                 heroContent.style.transform = `translate(${moveX * 0.3}px, ${moveY * 0.3}px)`;
             }
@@ -642,6 +672,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (searchInput) {
         searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
             filterServices();
         });
     }
@@ -680,10 +711,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        // Actualizar contador
         if (resultCount) {
             resultCount.textContent = visibleCount;
         }
         
+        // Mostrar/ocultar mensaje "no results"
         if (noResults && serviciosGrid) {
             if (visibleCount === 0) {
                 noResults.style.display = 'block';

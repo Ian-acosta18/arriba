@@ -3,14 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA BEAUTY & SPA - Productos</title>
+    <title>AURA BEAUTY & SPA - Luce radiante, siéntete tú</title>
     
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/style.css">
+    
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&family=Dancing+Script&display=swap" rel="stylesheet">
+
+    
+    <style>
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--color-principal, #B98D7B);
+            padding-bottom: 1rem;
+        }
+
+        .tabla-admin {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tabla-admin th {
+            background-color: var(--color-principal, #B98D7B);
+            color: white;
+            padding: 1rem;
+            font-family: 'Playfair Display', serif;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        .tabla-admin td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            color: var(--color-texto, #5c4b45);
+        }
+
+        .tabla-admin tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Botones de Acción (Editar/Borrar) */
+        .btn-accion {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-accion:hover { opacity: 0.8; }
+        .btn-editar { background-color: #f0ad4e; color: white; }
+        .btn-borrar { background-color: #d9534f; color: white; }
+
+        /* Botón "Nuevo" */
+        .btn-nuevo {
+            background-color: var(--color-principal, #B98D7B);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .btn-nuevo:hover {
+            background-color: #a57c6b;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
 
@@ -21,19 +97,27 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="instalaciones.html">Instalaciones</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="reservar.html" class="btn-reserva">Reservar Cita</a></li>
+                
+                <li><a href="http://127.0.0.1:8000">Inicio</a></li>
+                <li><a href="http://127.0.0.1:8000/servicios">Servicios</a></li>
+                <li><a href="http://127.0.0.1:8000/instalaciones">Instalaciones</a></li>
+                <li><a href="http://127.0.0.1:8000/productos">Productos</a></li>
+                <li><a href="http://127.0.0.1:8000/nosotros">Nosotros</a></li>
+                <li><a href="http://127.0.0.1:8000/contacto">Contacto</a></li>
+                
+                
+                <li><a href="http://127.0.0.1:8000/reservaciones" class="btn-reserva">Reservar Cita</a></li>
+                
+                
+                <li><a href="http://127.0.0.1:8000/administrador" class="btn-reserva">Administrador</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         
+        
+
 <section class="hero-boutique fade-in">
     <div class="hero-boutique-content">
         <span class="etiqueta-destacada">Aura Home Care</span>
@@ -42,134 +126,318 @@
     </div>
 </section>
 
+
 <div class="productos-container">
     <div class="productos-grid">
-        <div class="producto-card-premium">
-            <div class="img-wrapper">
-                <img src="imagen/mochila_tommy.jpg" alt="Mochila Tommy">
-                <span class="badge-nuevo">Recomendado</span>
-            </div>
-            <div class="info-wrapper">
-                <div class="info-top">
-                    <h3>Mochila Tommy</h3>
-                    <p class="descripcion">Mochila elegante marca Tommy.</p>
+                                    <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764923879_bolso_negro_coach.jpg" alt="Bolsa New York Coach">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Bolsa New York Coach</h3>
+                            
+                            <p class="descripcion">Bolso negro New York Coach</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,450.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-bottom">
-                    <span class="precio">$1,700.00</span>
-                    <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764924407_tarjetero_coach.jpg" alt="Tarjetera New York Coach">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Tarjetera New York Coach</h3>
+                            
+                            <p class="descripcion">Tarjetera minimalista color negra con detalles en café</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,200.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="producto-card-premium">
-            <div class="img-wrapper">
-                <img src="imagen/bolso_aldo.jpg" alt="Bolso Aldo">
-                <span class="badge-nuevo">Recomendado</span>
-            </div>
-            <div class="info-wrapper">
-                <div class="info-top">
-                    <h3>Bolso Aldo</h3>
-                    <p class="descripcion">Bolso de mano marca Aldo.</p>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764924712_monedero_coach2.jpg" alt="Cartera New York Coach">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Cartera New York Coach</h3>
+                            
+                            <p class="descripcion">Cartera negra con agarradera a un costado.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,000.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-bottom">
-                    <span class="precio">$1,350.00</span>
-                    <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764925159_bolso_mk.jpg" alt="Bolsa Michael Kors">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Bolsa Michael Kors</h3>
+                            
+                            <p class="descripcion">Bolsa de alta calidad color gris y crema.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$2,460.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="producto-card-premium">
-            <div class="img-wrapper">
-                <img src="imagen/bolso_mk.jpg" alt="Bolso Michael Kors">
-                <span class="badge-nuevo">Recomendado</span>
-            </div>
-            <div class="info-wrapper">
-                <div class="info-top">
-                    <h3>Bolso Michael Kors</h3>
-                    <p class="descripcion">Bolso de lujo MK.</p>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764925238_bolso_aldo.jpg" alt="Bolso Aldo">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Bolso Aldo</h3>
+                            
+                            <p class="descripcion">Bolso de color rosa, pastel con un diseño seguro.</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,350.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-bottom">
-                    <span class="precio">$2,460.00</span>
-                    <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764925432_bolso_casual.jpg" alt="Bandolera">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Bandolera</h3>
+                            
+                            <p class="descripcion">Es una bandolera de piel sistématica , marrón y blanca</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$1,600.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="producto-card-premium">
-            <div class="img-wrapper">
-                <img src="imagen/bolso_casual.jpg" alt="Bolso Casual">
-                <span class="badge-nuevo">Recomendado</span>
-            </div>
-            <div class="info-wrapper">
-                <div class="info-top">
-                    <h3>Bolso Casual</h3>
-                    <p class="descripcion">Bolso cómodo.</p>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764925604_alasiante_temporal.jpg" alt="Alasiante">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Alasiante</h3>
+                            
+                            <p class="descripcion">Alasiante temporal progresivo</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$300.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-bottom">
-                    <span class="precio">$1,600.00</span>
-                    <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764925791_colageno_en_emulsion.jpg" alt="Colageno en emulsión">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Colageno en emulsión</h3>
+                            
+                            <p class="descripcion">Colageno en emulsión| Protector-Infusión|Pre-Proceso Capilar</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$300.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="producto-card-premium">
-            <div class="img-wrapper">
-                <img src="imagen/monedero_coach.jpg" alt="Monedero Coach">
-                <span class="badge-nuevo">Recomendado</span>
-            </div>
-            <div class="info-wrapper">
-                <div class="info-top">
-                    <h3>Monedero Coach</h3>
-                    <p class="descripcion">Monedero práctico.</p>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764925896_dual_color_matice.jpg" alt="Dual Color Matice">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Dual Color Matice</h3>
+                            
+                            <p class="descripcion">Mascarilla matiz | Neutraliza Visos | Amarillo / Naranjosos | Violeta 35 / Azul 65</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$300.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-bottom">
-                    <span class="precio">$1,700.00</span>
-                    <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764926009_fresh_curls_liss.jpg" alt="Fresh Curls &amp; Liss">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>Fresh Curls &amp; Liss</h3>
+                            
+                            <p class="descripcion">Rizos definidos o cabello liso y brillante antifrizz</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$300.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="producto-card-premium">
-            <div class="img-wrapper">
-                <img src="imagen/monedero_coach2.jpg" alt="Monedero Coach 2">
-                <span class="badge-nuevo">Recomendado</span>
-            </div>
-            <div class="info-wrapper">
-                <div class="info-top">
-                    <h3>Monedero Coach 2</h3>
-                    <p class="descripcion">Estilo compacto.</p>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764926151_bi_phaseta_texturi.jpg" alt="BI- PHASETA TEXTURI">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>BI- PHASETA TEXTURI</h3>
+                            
+                            <p class="descripcion">Tratamiento desenredarte alto nivel hidratacion y acondicionamiento</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$300.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-bottom">
-                    <span class="precio">$1,000.00</span>
-                    <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
+                            <div class="producto-card-premium">
+                    <div class="img-wrapper">
+                        
+                        <img src="http://127.0.0.1:8000/imagen/1764926245_gel_force_anti_caida.jpg" alt="GelForce">
+                        
+                        
+                        <span class="badge-nuevo">Recomendado</span>
+                    </div>
+                    
+                    <div class="info-wrapper">
+                        <div class="info-top">
+                            <h3>GelForce</h3>
+                            
+                            <p class="descripcion">GelForce, Anti-caida. Gel de fijacion extrema de cebo - regulador absorvente</p>
+                        </div>
+                        
+                        <div class="info-bottom">
+                            <span class="precio">$320.00</span>
+                            
+                            <a href="http://127.0.0.1:8000/contacto" class="btn-comprar-icon">
+                                🛍 Adquirir
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="producto-card-premium">
-            <div class="img-wrapper">
-                <img src="imagen/tarjetero_coach.jpg" alt="Tarjetero Coach">
-                <span class="badge-nuevo">Recomendado</span>
-            </div>
-            <div class="info-wrapper">
-                <div class="info-top">
-                    <h3>Tarjetero Coach</h3>
-                    <p class="descripcion">Tarjetero minimalista.</p>
-                </div>
-                <div class="info-bottom">
-                    <span class="precio">$1,500.00</span>
-                    <a href="contacto.html" class="btn-comprar-icon">🛍 Adquirir</a>
-                </div>
-            </div>
-        </div>
-    </div>
+                        </div>
 </div>
+
 
 <section class="asesoria-banner">
     <div class="asesoria-content">
         <h2>¿No sabes qué necesita tu piel?</h2>
         <p>Nuestras especialistas pueden realizarte un diagnóstico gratuito en tu próxima visita para recomendarte la rutina ideal.</p>
-        <a href="reservar.html" class="link-asesoria">Agendar Diagnóstico &rarr;</a>
+        <a href="http://127.0.0.1:8000/reservaciones" class="link-asesoria">Agendar Diagnóstico &rarr;</a>
     </div>
 </section>
 
@@ -178,6 +446,7 @@
     <footer>
         <div class="footer-content">
             <p>"Luce radiante, siéntete tú"</p>
+            
             <p>© 2025 AURA BEAUTY & SPA. Todos los derechos reservados.</p>
         </div>
     </footer>
